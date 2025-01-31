@@ -1,4 +1,4 @@
-# Bienvenido al coding-interview-backend-level-3
+# Bienvenido al coding-interview-backend-level-3 - Parte I
 
 ## Descripción
 Este proyecto es una API REST que permite realizar operaciones CRUD sobre una entidad de tipo `Item`.
@@ -13,11 +13,12 @@ Tu tarea es completar la implementación de toda la funcionalidad de forma tal d
 - ✅ Modificar la estructura del proyecto (/src/** es todo tuyo)
 - ✅ Elegir una base de datos
 - ✅ Elegir un framework web
+- ✅ Crear otros tests
 - ✅ Cambiar la definición del .devContainer
 
 
 ### Que **no** puedes hacer:
-- ❌ No puedes modificar el archivo original /e2e/index.test.ts (pero puedes crear otros e2e test si lo deseas)
+- ❌ No puedes modificar el archivo original /e2e/index.test.ts (pero puedes crear otros test si lo deseas)
 - ❌ El proyecto debe usar Typescript 
 - ❌ Estresarte 🤗
 
