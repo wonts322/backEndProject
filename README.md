@@ -1,11 +1,19 @@
 # Bienvenido al coding-interview-backend-level-3 - Parte I
 
 ## Descripción
-Este proyecto es una API REST que permite realizar operaciones CRUD sobre una entidad de tipo `Item`.
+Eres el Senior Developer de tu equipo en El Dorado, y te han dado la responsabilidad de desarrollar un nuevo feature que nos pide el equipo de producto:
 
-La entidad tiene 3 campos: `id`, `name` y `price`.
+> API REST que permita realizar operaciones CRUD sobre una entidad de tipo `Item`.
+>
+> La entidad tiene 3 campos: `id`, `name` y `price`.
+>
+>
 
-Tu tarea es completar la implementación de toda la funcionalidad de forma tal de que los tests e2e pasen exitosamente.
+# Requisitos:
+- Si el servicio se reinicia, los datos no se pueden perder.
+- Tienes que implementar tu codigo como si estuvieses haciendo un servicio para El Dorado listo para produccion.
+- Completar la implementación de toda la funcionalidad de forma tal de que los tests e2e pasen exitosamente.
+
 
 ### Que puedes hacer: 
 - ✅ Modificar el código fuente y agregar nuevas clases, métodos, campos, etc.
@@ -13,7 +21,7 @@ Tu tarea es completar la implementación de toda la funcionalidad de forma tal d
 - ✅ Modificar la estructura del proyecto (/src/** es todo tuyo)
 - ✅ Elegir una base de datos
 - ✅ Elegir un framework web
-- ✅ Crear otros tests
+- ✅ Crear tests
 - ✅ Cambiar la definición del .devContainer
 
 
