@@ -1,26 +1,38 @@
-import Hapi from '@hapi/hapi'
-import { defineRoutes } from './routes'
+require('dotenv').config();
+import Hapi from '@hapi/hapi';
+import { defineRoutes } from './routes';
+import { DataSource } from 'typeorm';
+import { cleanItemsTable, createDbConnection } from './db';
 
-const getServer = () => {
-    const server = Hapi.server({
-        host: 'localhost',
-        port: 3000,
-    })
+const getServer = (dataSource: DataSource, host: string, port: number) => {
+  const server = Hapi.server({
+    host,
+    port,
+  });
 
-    defineRoutes(server)
+  defineRoutes(server, dataSource);
 
-    return server
-}
+  return server;
+};
 
 export const initializeServer = async () => {
-    const server = getServer()
-    await server.initialize()
-    return server
-}
+  const dataSource = await createDbConnection();
+  await cleanItemsTable(dataSource); // cleaning it so the tests pass
+
+  const serverHost = 'localhost';
+  const serverPort = 5432;
+  const server = getServer(dataSource, serverHost, serverPort);
+  await server.initialize();
+  return server;
+};
 
 export const startServer = async () => {
-    const server = getServer()
-    await server.start()
-    console.log(`Server running on ${server.info.uri}`)
-    return server
+  const dataSource = await createDbConnection();
+
+  const serverHost = '0.0.0.0';
+  const serverPort = 3000;
+  const server = getServer(dataSource, serverHost, serverPort);
+  await server.start();
+  console.log(`Server running on ${server.info.uri}`);
+  return server;
 };
